@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css?family=Bangers');
+
+ html {
+     font-size: 14px;
+}
+ @media (min-width: 768px) {
+     html {
+         font-size: 16px;
+    }
+}
+ body {
+     padding-top: 5.5rem;
+}
+ .container {
+     max-width: 960px;
+}
+ .pricing-header {
+     max-width: 700px;
+}
+ .card-deck .card {
+     min-width: 220px;
+}
+ .border-top {
+     border-top: 1px solid #e5e5e5;
+}
+ .border-bottom {
+     border-bottom: 1px solid #e5e5e5;
+}
+ .box-shadow {
+     box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+ .gf-bangers {
+     font-family: 'Bangers', serif;
+}
+ .gf-bangers-1x {
+     font-family: 'Bangers', serif;
+     font-size: 2.0rem;
+     line-height: 80% 
+}
+ .gf-bangers-2x {
+     font-family: 'Bangers', serif;
+     font-size: 3.0rem;
+     line-height: 80% 
+}
+ .gf-bangers-3x {
+     font-family: 'Bangers', serif;
+     font-size: 4.0rem;
+     line-height: 80%;
+}
