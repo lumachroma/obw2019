@@ -1,0 +1,79 @@
+﻿﻿<div>
+    <h3>Register</h3>
+    <form data-bind="with: entity">
+        <div class="form-group row">
+            <label for="Name" class="col-sm-2 col-form-label">Name</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="Name" value="Name" data-bind="value: Name">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="Phone" class="col-sm-2 col-form-label">Phone</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="Phone" value="Phone" data-bind="value: Phone">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="ReceiptNumber" class="col-sm-2 col-form-label">Receipt Number</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="ReceiptNumber" value="Receipt Number" data-bind="value: ReceiptNumber">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="Email" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-10">
+                <input type="email" class="form-control" id="Email" value="Email" data-bind="value: Email">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="House" class="col-sm-2 col-form-label">House</label>
+            <div class="col-sm-10">
+                <select class="form-control" id="House" data-bind="value: House">
+                    <option value="N/A">Please Choose...</option>
+                    <option>Green</option>
+                    <option>Blue</option>
+                    <option>Black</option>
+                    <option>Red</option>
+                    <option>White</option>
+                    <option>Yellow</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="Batch" class="col-sm-2 col-form-label">Batch</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="Batch" value="Batch" data-bind="value: Batch">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="Note" class="col-sm-2 col-form-label">Note</label>
+            <div class="col-sm-10">
+                <textarea class="form-control" id="Note" rows="3" data-bind="value: Note">Note</textarea>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="ModeOfPayment" class="col-sm-2 col-form-label">Mode of Payment</label>
+            <div class="col-sm-10">
+                <select class="form-control" id="ModeOfPayment" data-bind="value: ModeOfPayment">
+                    <option value="N/A">Please Choose...</option>
+                    <option>RM50.00 - Cash</option>
+                    <option>RM50.00 - Online</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-10">
+                <!-- ko if: $root.id() == 0 -->
+                <button type="button" class="btn btn-success" data-bind="click: $root.addEntity">Post</button>
+                <!-- /ko -->
+                <!-- ko if: $root.id() != 0 -->
+                <button type="button" class="btn btn-info" data-bind="click: $root.editEntity">Edit</button>
+                <button type="button" class="btn btn-danger" data-bind="click: $root.deleteEntity">Delete</button>
+                <!-- /ko -->
+                <button type="reset" class="btn btn-light">Reset</button>
+            </div>
+        </div>
+    </form>
+
+</div>

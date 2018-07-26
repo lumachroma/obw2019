@@ -1,0 +1,11 @@
+<div>
+    <h3>Register</h3>
+    <ul class="list-unstyled" data-bind="foreach: entities">
+            <li data-bind="with: $data">
+                <span data-bind="text: Name">&nbsp;</span>&nbsp;
+                <span data-bind="text: Phone">&nbsp;</span>&nbsp;
+                <span data-bind="text: Email">&nbsp;</span>&nbsp;
+                <a class="btn btn-sm btn-link" data-bind="attr: { href: '#register/' + Key }">Edit</a>
+            </li>
+    </ul>
+</div>
