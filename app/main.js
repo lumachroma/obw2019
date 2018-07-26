@@ -134,3 +134,10 @@ define('services/datacontext', [], function () {
         remove: remove
     };
 });
+
+define('services/config', [], function () {
+    return {
+        baseUrl: "https://starobw-2019.firebaseio.com/",
+        applicationName: "STAR OBW 2019",
+    };
+});
