@@ -1,11 +1,17 @@
 <div>
-    <h3>Register</h3>
-    <ul class="list-unstyled" data-bind="foreach: entities">
-            <li data-bind="with: $data">
-                <span data-bind="text: Name">&nbsp;</span>&nbsp;
-                <span data-bind="text: Phone">&nbsp;</span>&nbsp;
-                <span data-bind="text: Email">&nbsp;</span>&nbsp;
-                <a class="btn btn-sm btn-link" data-bind="attr: { href: '#register/' + Key }">Edit</a>
-            </li>
-    </ul>
+    <h3>Registered</h3>
+    <table class="table table-sm table-hover">
+        <thead>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>&nbsp;</th>
+        </thead>
+        <tbody data-bind="foreach: entities">
+            <td data-bind="with: $data"><span data-bind="text: Name">&nbsp;</span></td>
+            <td data-bind="with: $data"><span data-bind="text: Phone">&nbsp;</span></td>
+            <td data-bind="with: $data"><span data-bind="text: Email">&nbsp;</span></td>
+            <td data-bind="with: $data"><a class="btn btn-sm btn-info" data-bind="attr: { href: '#register/' + Key }">Edit</a></td>
+        </tbody>
+    </table>
 </div>
