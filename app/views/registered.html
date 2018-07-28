@@ -1,19 +1,20 @@
 <div>
-    <h3>Registered</h3>
+    <h3>Registered <small data-bind="if: isBusy"><i class="text-muted fa fa-refresh fa-spin fa-fw"></i></small></h3>
+    <p>* Total <strong><span class="text-success" data-bind="text: entities().length"></span></strong> registered participants!</p>
     <table class="table table-sm table-hover">
-        <thead>
-            <th>&nbsp;</th>
-            <th>Name</th>
-            <th>Phone</th>
-            <th>Email</th>
-            <th>&nbsp;</th>
-        </thead>
-        <tbody data-bind="foreach: entities">
-            <td data-bind="with: $data"><span data-bind="text: ($index() + 1)">&nbsp;</span></td>
-            <td data-bind="with: $data"><span data-bind="text: Name">&nbsp;</span></td>
-            <td data-bind="with: $data"><span data-bind="text: Phone">&nbsp;</span></td>
-            <td data-bind="with: $data"><span data-bind="text: Email">&nbsp;</span></td>
-            <td data-bind="with: $data"><a class="btn btn-sm btn-info" data-bind="attr: { href: '#register/' + Key }">Edit</a></td>
-        </tbody>
-    </table>
-</div>
+            <thead>
+                <th>&nbsp;</th>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>&nbsp;</th>
+            </thead>
+            <tbody data-bind="foreach: entities">
+                <td data-bind="with: $data"><span data-bind="text: ($index() + 1)">&nbsp;</span></td>
+                <td data-bind="with: $data"><span data-bind="text: Name">&nbsp;</span></td>
+                <td data-bind="with: $data"><span data-bind="text: Phone">&nbsp;</span></td>
+                <td data-bind="with: $data"><span data-bind="text: Email">&nbsp;</span></td>
+                <td data-bind="with: $data"><a class="btn btn-sm btn-info" data-bind="attr: { href: '#register/' + Key }">Edit</a></td>
+            </tbody>
+        </table>
+    </div>
