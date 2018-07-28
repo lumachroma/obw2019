@@ -2,12 +2,14 @@
     <h3>Registered</h3>
     <table class="table table-sm table-hover">
         <thead>
+            <th>&nbsp;</th>
             <th>Name</th>
             <th>Phone</th>
             <th>Email</th>
             <th>&nbsp;</th>
         </thead>
         <tbody data-bind="foreach: entities">
+            <td data-bind="with: $data"><span data-bind="text: $index">&nbsp;</span></td>
             <td data-bind="with: $data"><span data-bind="text: Name">&nbsp;</span></td>
             <td data-bind="with: $data"><span data-bind="text: Phone">&nbsp;</span></td>
             <td data-bind="with: $data"><span data-bind="text: Email">&nbsp;</span></td>
