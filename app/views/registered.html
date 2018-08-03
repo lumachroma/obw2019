@@ -2,7 +2,7 @@
     <h3>Registered <small data-bind="if: isBusy"><i class="text-muted fa fa-refresh fa-spin fa-fw"></i></small></h3>
     <p>* Total <strong><span class="text-success" data-bind="text: entities().length"></span></strong> registered participants!</p>
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md">
             <div class="card mb-3">
                 <div class="card-header">
                     Search
@@ -36,16 +36,17 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <div class="col-3"></div>
-                            <div class="col-9">
-                                <button type="button" class="btn btn-success" data-bind="click: searchEntities">Search</button>
-                                <button type="reset" class="btn btn-light" data-bind="click: resetEntities">Reset</button>
+                                <div class="col-3"></div>
+                                <div class="col-9">
+                                    <button type="button" class="btn btn-success" data-bind="click: searchEntities">Search</button>
+                                    <button type="reset" class="btn btn-light" data-bind="click: resetEntities">Reset</button>
+                                </div>
                             </div>
-                        </div>
                     </form>
                 </div>
             </div>
         </div>
+        <div class="col-md"></div>
     </div>
     <div class="row">
         <div class="col">
@@ -54,20 +55,22 @@
                     <th>&nbsp;</th>
                     <th>Name</th>
                     <th>Contatcs</th>
+                    <th>Receipt</th>
                     <th>House</th>
                     <th>Batch</th>
                     <th>&nbsp;</th>
                 </thead>
                 <tbody data-bind="foreach: entities">
-                        <td data-bind="with: $data"><span data-bind="text: ($index() + 1)">&nbsp;</span></td>
-                        <td data-bind="with: $data"><span data-bind="text: Name">&nbsp;</span></td>
-                        <td data-bind="with: $data">
-                            <span data-bind="text: Phone">&nbsp;</span><br />
-                            <span data-bind="text: Email">&nbsp;</span>
-                        </td>
-                        <td data-bind="with: $data"><span data-bind="text: House">&nbsp;</span></td>
-                        <td data-bind="with: $data"><span data-bind="text: Batch">&nbsp;</span></td>
-                        <td data-bind="with: $data"><a class="btn btn-sm btn-info" data-bind="attr: { href: '#register/' + Key }">Edit</a></td>
+                    <td><span data-bind="text: ($index() + 1)">&nbsp;</span></td>
+                    <td><span data-bind="text: $data.Name ? $data.Name : 'undefined'">&nbsp;</span></td>
+                    <td>
+                        <span data-bind="text: $data.Phone ? $data.Phone : 'undefined'">&nbsp;</span><br />
+                        <span data-bind="text: $data.Email ? $data.Email : 'undefined'">&nbsp;</span>
+                    </td>
+                    <td><span data-bind="text: $data.ReceiptNumber ? $data.ReceiptNumber : 'undefined'">&nbsp;</span></td>
+                    <td><span data-bind="text: $data.House ? $data.House : 'undefined'">&nbsp;</span></td>
+                    <td><span data-bind="text: $data.Batch ? $data.Batch : 'undefined'">&nbsp;</span></td>
+                    <td><a class="btn btn-sm btn-info" data-bind="attr: { href: '#register/' + Key }">Edit</a></td>
                 </tbody>
             </table>
         </div>
