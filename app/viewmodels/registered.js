@@ -8,7 +8,12 @@ define(['knockout', 'schemas', 'durandal/system', 'durandal/app', 'plugins/route
             defaultEntitiesEndpoint = `${config.baseUrl}/Participants.json`,
             searchEntities = function () {
                 if (keyword() != null) {
-                    var endpoint = `${config.baseUrl}/Participants.json?orderBy="${keywordProperty()}"&equalTo="${keyword()}"`;
+                    var endpoint = "";
+                    if(keywordProperty() === "IsReconcile") {
+                        endpoint = `${config.baseUrl}/Participants.json?orderBy="${keywordProperty()}"&equalTo=${keyword()}`;
+                    } else {
+                        endpoint = `${config.baseUrl}/Participants.json?orderBy="${keywordProperty()}"&equalTo="${keyword()}"`;
+                    }
                     loadEntities(endpoint);
                 }
             },
