@@ -2,6 +2,52 @@
     <h3>Registered <small data-bind="if: isBusy"><i class="text-muted fa fa-refresh fa-spin fa-fw"></i></small></h3>
     <p>* Total <strong><span class="text-success" data-bind="text: entities().length"></span></strong> registered participants!</p>
     <div class="row">
+        <div class="col-md-8">
+            <div class="card mb-3">
+                <div class="card-header">
+                    Search
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="form-group row">
+                            <label for="Keyword" class="col-3 col-form-label">Keyword</label>
+                            <div class="col-9">
+                                <input type="text" class="form-control" id="Keyword" value="Keyword" data-bind="value: keyword">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-3"></div>
+                            <div class="col-9">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="keywordPropertyGroup" value="Batch" data-bind="checked: keywordProperty"
+                                    />
+                                    <label class="form-check-label" for="inlineRadio1">Batch</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="keywordPropertyGroup" value="House" data-bind="checked: keywordProperty"
+                                    />
+                                    <label class="form-check-label" for="inlineRadio1">House</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="keywordPropertyGroup" value="ReceiptNumber" data-bind="checked: keywordProperty"
+                                    />
+                                    <label class="form-check-label" for="inlineRadio1">Receipt</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-3"></div>
+                            <div class="col-9">
+                                <button type="button" class="btn btn-success" data-bind="click: searchEntities">Search</button>
+                                <button type="reset" class="btn btn-light" data-bind="click: resetEntities">Reset</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
         <div class="col">
             <table class="table table-sm table-hover table-responsive">
                 <thead>
@@ -13,15 +59,15 @@
                     <th>&nbsp;</th>
                 </thead>
                 <tbody data-bind="foreach: entities">
-                    <td data-bind="with: $data"><span data-bind="text: ($index() + 1)">&nbsp;</span></td>
-                    <td data-bind="with: $data"><span data-bind="text: Name">&nbsp;</span></td>
-                    <td data-bind="with: $data">
-                        <span data-bind="text: Phone">&nbsp;</span><br />
-                        <span data-bind="text: Email">&nbsp;</span>
-                    </td>
-                    <td data-bind="with: $data"><span data-bind="text: House">&nbsp;</span></td>
-                    <td data-bind="with: $data"><span data-bind="text: Batch">&nbsp;</span></td>
-                    <td data-bind="with: $data"><a class="btn btn-sm btn-info" data-bind="attr: { href: '#register/' + Key }">Edit</a></td>
+                        <td data-bind="with: $data"><span data-bind="text: ($index() + 1)">&nbsp;</span></td>
+                        <td data-bind="with: $data"><span data-bind="text: Name">&nbsp;</span></td>
+                        <td data-bind="with: $data">
+                            <span data-bind="text: Phone">&nbsp;</span><br />
+                            <span data-bind="text: Email">&nbsp;</span>
+                        </td>
+                        <td data-bind="with: $data"><span data-bind="text: House">&nbsp;</span></td>
+                        <td data-bind="with: $data"><span data-bind="text: Batch">&nbsp;</span></td>
+                        <td data-bind="with: $data"><a class="btn btn-sm btn-info" data-bind="attr: { href: '#register/' + Key }">Edit</a></td>
                 </tbody>
             </table>
         </div>

@@ -3,14 +3,26 @@ define(['knockout', 'schemas', 'durandal/system', 'durandal/app', 'plugins/route
 
         var isBusy = ko.observable(false),
             entities = ko.observableArray([]),
-            activate = function () {
+            keyword = ko.observable(),
+            keywordProperty = ko.observable("Batch"),
+            defaultEntitiesEndpoint = `${config.baseUrl}/Participants.json`,
+            searchEntities = function () {
+                if (keyword() != null) {
+                    var endpoint = `${config.baseUrl}/Participants.json?orderBy="${keywordProperty()}"&equalTo="${keyword()}"`;
+                    loadEntities(endpoint);
+                }
+            },
+            resetEntities = function () {
+                loadEntities(defaultEntitiesEndpoint);
+            },
+            loadEntities = function (endpoint) {
                 isBusy(true);
-                return context.get(`${config.baseUrl}/Participants.json`, true, {})
+                return context.get(endpoint, true, {})
                     .done(function (result) {
                         console.log(result);
                         isBusy(false);
                         if (null != result) {
-                            var results =  $.map(result, function(item, i){
+                            var results = $.map(result, function (item, i) {
                                 item['Key'] = i;
                                 return item;
                             });
@@ -24,6 +36,9 @@ define(['knockout', 'schemas', 'durandal/system', 'durandal/app', 'plugins/route
                         router.navigate("/");
                     });
             },
+            activate = function () {
+                return loadEntities(defaultEntitiesEndpoint);
+            },
             attached = function () { },
             compositionComplete = function () { },
             deactivate = function () { };
@@ -31,6 +46,10 @@ define(['knockout', 'schemas', 'durandal/system', 'durandal/app', 'plugins/route
         return {
             isBusy: isBusy,
             entities: entities,
+            keyword: keyword,
+            keywordProperty: keywordProperty,
+            searchEntities: searchEntities,
+            resetEntities: resetEntities,
             activate: activate,
             attached: attached,
             compositionComplete: compositionComplete,
