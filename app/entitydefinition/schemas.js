@@ -11,6 +11,7 @@ define(['knockout'], function (ko) {
             Batch: ko.observable(),
             Note: ko.observable(),
             ModeOfPayment: ko.observable(),
+            IsReconcile: ko.observable(),
             Id: ko.observable(),
             WebId: ko.observable(),
 
@@ -59,6 +60,9 @@ define(['knockout'], function (ko) {
             }
             if (optionOrWebid.ModeOfPayment) {
                 model.ModeOfPayment(optionOrWebid.ModeOfPayment);
+            }
+            if (optionOrWebid.IsReconcile) {
+                model.IsReconcile(optionOrWebid.IsReconcile);
             }
         }
 

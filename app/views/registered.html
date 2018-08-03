@@ -14,18 +14,15 @@
                         </div>
                         <div class="form-group">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="keywordPropertyGroup" value="Batch" data-bind="checked: keywordProperty"
-                                />
+                                <input class="form-check-input" type="radio" name="keywordPropertyGroup" value="Batch" data-bind="checked: keywordProperty" />
                                 <label class="form-check-label" for="inlineRadio1">Batch</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="keywordPropertyGroup" value="House" data-bind="checked: keywordProperty"
-                                />
+                                <input class="form-check-input" type="radio" name="keywordPropertyGroup" value="House" data-bind="checked: keywordProperty" />
                                 <label class="form-check-label" for="inlineRadio1">House</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="keywordPropertyGroup" value="ReceiptNumber" data-bind="checked: keywordProperty"
-                                />
+                                <input class="form-check-input" type="radio" name="keywordPropertyGroup" value="ReceiptNumber" data-bind="checked: keywordProperty" />
                                 <label class="form-check-label" for="inlineRadio1">Receipt</label>
                             </div>
                         </div>
@@ -53,7 +50,10 @@
                 </thead>
                 <tbody data-bind="foreach: entities">
                     <td><span data-bind="text: ($index() + 1)">&nbsp;</span></td>
-                    <td><span data-bind="text: $data.Name ? $data.Name : 'undefined'">&nbsp;</span></td>
+                    <td>
+                        <span data-bind="text: $data.Name ? $data.Name : 'undefined'">&nbsp;</span>
+                        <span data-bind="if: $data.IsReconcile"><strong><i class="fa fa-check text-success"></i></strong></span>
+                    </td>
                     <td>
                         <span data-bind="text: $data.Phone ? $data.Phone : 'undefined'">&nbsp;</span><br />
                         <span data-bind="text: $data.Email ? $data.Email : 'undefined'">&nbsp;</span>
