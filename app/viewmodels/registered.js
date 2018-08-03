@@ -13,6 +13,7 @@ define(['knockout', 'schemas', 'durandal/system', 'durandal/app', 'plugins/route
                 }
             },
             resetEntities = function () {
+                keyword(null);
                 loadEntities(defaultEntitiesEndpoint);
             },
             loadEntities = function (endpoint) {
